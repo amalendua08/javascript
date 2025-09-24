@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Feedback Processing</title>
+</head>
+<body>
+   <script type="text/javascript">
+      // Original feedback string
+      var feedback = "   I loved the FOOD and the service!   ";
+
+      // 1. Remove extra spaces at the beginning and end
+      var cleanedFeedback = feedback.trim();
+      console.log("After trimming:", cleanedFeedback);
+
+      // 2. Convert the entire string to lowercase
+      var lowerCaseFeedback = cleanedFeedback.toLowerCase();
+      console.log("After converting to lowercase:", lowerCaseFeedback);
+
+      // 3. Replace the word "food" with "ambience"
+      var replacedFeedback = lowerCaseFeedback.replace("food", "ambience");
+      console.log("After replacing 'food' with 'ambience':", replacedFeedback);
+
+      // 4. Find and print the position of the word "service"
+      var position = lowerCaseFeedback.indexOf("service");
+      console.log("Position of 'service':", position);
+
+      // 5. Convert the string to an array of words and print the array
+      var wordsArray = lowerCaseFeedback.split(" ");
+      console.log("Array of words:", wordsArray);
+   </script>
+</body>
+</html>
