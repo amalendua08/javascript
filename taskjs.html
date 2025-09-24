@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>random</title>
+</head>
+<body>
+	<button onclick="checkReturn()">Check Return Eligibility</button>
+	<p id="result"></p>
+		<script type="text/javascript">
+			
+		let order={
+			itemName:"TV",
+			isDelivered: true,
+            daysSinceDelivery: 5
+    };
+    function checkReturn(){
+    	let message=(order.isDelivered&& order.daysSinceDelivery<=7)?
+    	"Eligible for Return ": "Return period expired";
+
+    	console.log("Message:",message);
+    	console.log("Does itemName exist?", "itemName" in order);
+    	delete order.daysSinceDelivery;
+    	console.log(order);
+
+
+ 
+    }
+
+		
+		</script>
+</body>
+</html>
