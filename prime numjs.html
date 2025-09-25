@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime Number</title>
+</head>
+<body>
+	<p>to check prime number</p>
+	<script type="text/javascript">
+		let num=parseInt(prompt("enter a number:"));
+		let isPrime=true; //to assume num is a prime
+		for (let i=2;i<num;i++){
+			if(num%i==0){
+				isPrime=false; //if num is divisible(prime)
+				break;
+			}
+		}
+		if (num <= 1) isPrime = false; //nums less than 1 are not prime
+
+        if (isPrime) {
+           console.log(num + " is a prime number");
+        } else {
+           console.log(num + " is not a prime number");
+        }
+	</script>
+
+</body>
+</html>
