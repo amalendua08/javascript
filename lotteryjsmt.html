@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lottery Draw</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+  <style>
+    body {
+      text-align: center;
+      margin-top: 60px;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    button {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkgreen;
+    }
+
+    #winner {
+      font-size: 26px;
+      color: red;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><b>Lottery Draw </b></h1>
+  <p>Click below to pick a lucky winner!</p>
+
+  <button onclick="pickWinner()">Pick Winner</button>
+
+  <p id="winner"></p>
+
+  <script>
+   
+    let tickets = [101, 202, 303, 404, 505, 606, 707, 808, 909];
+
+    function pickWinner() {
+     
+      let randomIndex = Math.floor(Math.random() * tickets.length);
+      let winner = tickets[randomIndex];
+      console.log("The winning ticket is:", winner);
+
+      document.getElementById("winner").innerText = "Winning Ticket: " + winner;
+    }
+  </script>
+
+</body>
+</html>
