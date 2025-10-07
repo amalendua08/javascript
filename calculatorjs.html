@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+.calu {
+  border-radius: 25px;
+  background: darkred;
+  padding: 15px; 
+  width: 300px;
+  height: 350px;
+  margin-left: 10px;  
+  margin-top: 30px;
+  color: white;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="calu">
+  <h1>CALCULATOR</h1>
+<form>
+   <input type="Number" id="num1" name="Num" placeholder="Num 1"><br>
+  <br>
+  <input type="Number" id="num2" name="Num" placeholder="Num 2"><br>
+</form><br>
+<label for="calculator">select operator</label>
+  
+  <select id="cal" name="operations">
+    <option value="add">+</option>
+    <option value="subtract">-</option>
+    <option value="multiply">*</option>
+    <option value="divide">/</option><br><br>+
+  </select><br>
+  <button type="button" onclick="calculator()">=</button>
+<p id ="result"></p>
+</div>
+<script>
+  function add(a, b) {
+      return a + b;
+    }
+
+    function subtract(a, b) {
+      return a - b;
+    }
+
+    function multiply(a, b) {
+      return a * b;
+    }
+
+    function divide(a, b) {
+      if (b === 0) {
+        return "cannot divide";
+      } else {
+        return a / b;
+      }
+    }
+     function calculator(){
+   
+    let num1= parseFloat(document.getElementById("num1").value);
+     let num2=parseFloat(document.getElementById("num2").value);
+      let operation= document.getElementById("cal").value;
+    let result;
+if (isNaN(num1) || isNaN(num2)) {
+        result = "Please enter valid numbers.";
+      } else {
+        switch (operation) {
+          case "add":
+            result = add(num1, num2);
+            break;
+          case "subtract":
+            result = subtract(num1, num2);
+            break;
+          case "multiply":
+            result = multiply(num1, num2);
+            break;
+          case "divide":
+            result = divide(num1, num2);
+            break;
+           default:
+        result = 'invalid operation';
+      }
+}
+      document.getElementById("result").innerText = "Result: " + result;
+    
+
+  
+  }
+</script>
+
+</body>
+</html>
